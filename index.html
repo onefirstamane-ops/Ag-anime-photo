@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050814">
+  <meta name="description" content="AG Anime Gallery - Discover anime art and characters.">
+  <title>AG ANIME GALLERY</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-icon">AG</span>
+      <span>ANIME <b>GALLERY</b></span>
+    </a>
+    <button id="favoritesNav" class="outline-btn">♡ Favorites</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">✦ YOUR ANIME UNIVERSE ✦</div>
+      <h1>ENTER THE <span>ANIME</span><br>UNIVERSE</h1>
+      <p>Discover characters. Save your favorites. Build your gallery.</p>
+
+      <form id="searchForm" class="searchbar">
+        <span>⌕</span>
+        <input id="searchInput" type="search"
+          placeholder="Search anime or character..."
+          aria-label="Search anime or character">
+        <button type="submit">SEARCH</button>
+      </form>
+
+      <div class="search-types">
+        <button class="type-btn active" data-type="anime">Anime</button>
+        <button class="type-btn" data-type="characters">Characters</button>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">DISCOVER</div>
+          <h2 id="sectionTitle">Trending Anime</h2>
+        </div>
+        <span id="resultCount" class="muted"></span>
+      </div>
+
+      <div class="chips">
+        <button class="chip active" data-query="top">Trending</button>
+        <button class="chip" data-query="Kiyotaka Ayanokoji">Ayanokoji</button>
+        <button class="chip" data-query="Satoru Gojo">Gojo</button>
+        <button class="chip" data-query="Naruto">Naruto</button>
+        <button class="chip" data-query="One Piece">One Piece</button>
+      </div>
+
+      <div id="status" class="status">Loading anime gallery...</div>
+      <div id="gallery" class="gallery"></div>
+      <button id="loadMore" class="load-more" hidden>LOAD MORE</button>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">YOUR COLLECTION</div>
+          <h2>My Photos</h2>
+        </div>
+        <span class="muted">Saved on this device</span>
+      </div>
+
+      <p class="muted info">
+        Add your own images. They remain on this browser and are not
+        automatically uploaded to a server.
+      </p>
+
+      <label class="upload-box" for="photoInput">
+        <span class="upload-icon">＋</span>
+        <strong>Add Your Anime Photos</strong>
+        <span class="muted">Choose image files from your phone</span>
+        <input id="photoInput" type="file" accept="image/*" multiple hidden>
+      </label>
+
+      <div id="myGallery" class="gallery"></div>
+    </section>
+
+    <section id="favoritesSection" class="content-section">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">YOUR PERSONAL LIST</div>
+          <h2>Favorite Photos</h2>
+        </div>
+      </div>
+      <div id="favoritesGallery" class="gallery"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand"><span class="brand-icon">AG</span> ANIME GALLERY</div>
+    <p>Made for anime fans. © <span id="year"></span> AG Gallery</p>
+    <p class="muted">Anime data provided by Jikan API. Images belong to their respective owners.</p>
+  </footer>
+
+  <nav class="bottom-nav">
+    <a href="#" class="nav-item active"><span>⌂</span>Home</a>
+    <button id="myPhotosNav" class="nav-item"><span>▧</span>My Photos</button>
+    <button id="favoritesBottom" class="nav-item"><span>♡</span>Saved</button>
+  </nav>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
